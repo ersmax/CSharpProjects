@@ -1,0 +1,6 @@
+<Solution>
+  <Folder Name="/Chapter01_C#/">
+    <Project Path="Chapter01_C#/Exercise01_What_is_C#/Exercise01_What_is_C#.csproj" />
+  </Folder>
+  <Folder Name="/Chapter02/" />
+</Solution>
