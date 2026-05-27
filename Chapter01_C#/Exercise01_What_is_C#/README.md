@@ -1,6 +1,6 @@
-True/False 
+C#
 -
-1) C# is a special-purpose language optimized for making web applications.
+1) Is C# is a special-purpose language optimized for making web applications?
 2) What is the name of the framework that C# runs on?
 ---
 1. False. C# is a general-purpose programming language that can be used for a wide variety of applications, 

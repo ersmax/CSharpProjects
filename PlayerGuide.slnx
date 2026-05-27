@@ -1,8 +1,10 @@
 <Solution>
   <Folder Name="/Chapter01_C#/">
-    <Project Path="Chapter01_C#/Exercise01_What_is_C#/Exercise01_What_is_C#.csproj" />
+    <Project Path="Chapter01_C#/Exercise01_What_is_C#/Ex01_C#.csproj" />
   </Folder>
   <Folder Name="/Chapter02_IDE/">
-    <Project Path="Chapter02_IDE/Exercise01_HelloWorld/Exercise01_HelloWorld.csproj" Id="1ff95f53-91fb-4cb3-b029-6628608016fd" />
+    <Project Path="Chapter02_IDE/Ex03_MakingOfAProgrammer/Ex03_MakingOfAProgrammer.csproj" Id="3d1d8a19-6ff4-4f82-b954-f5c085f0b4c6" />
+    <Project Path="Chapter02_IDE/Exercise01_HelloWorld/Ex01_HelloWorld.csproj" Id="1ff95f53-91fb-4cb3-b029-6628608016fd" />
+    <Project Path="Chapter02_IDE/Exercise02_Greetings/Ex02_WhatComesNext.csproj" Id="2d1df52a-5a8f-45b3-80ed-6c291c610c82" />
   </Folder>
 </Solution>
