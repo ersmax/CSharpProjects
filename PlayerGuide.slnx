@@ -2,5 +2,7 @@
   <Folder Name="/Chapter01_C#/">
     <Project Path="Chapter01_C#/Exercise01_What_is_C#/Exercise01_What_is_C#.csproj" />
   </Folder>
-  <Folder Name="/Chapter02/" />
+  <Folder Name="/Chapter02_IDE/">
+    <Project Path="Chapter02_IDE/Exercise01_HelloWorld/Exercise01_HelloWorld.csproj" Id="1ff95f53-91fb-4cb3-b029-6628608016fd" />
+  </Folder>
 </Solution>
