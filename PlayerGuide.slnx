@@ -8,4 +8,11 @@
     <Project Path="Chapter03_Program/Ex03_MakingOfAProgrammer/Ex03_MakingOfAProgrammer.csproj" />
     <Project Path="Chapter03_Program/Ex04_ConsolasAndTelim/Ex04_ConsolasAndTelim.csproj" />
   </Folder>
+  <Folder Name="/Chapter04_Comments/">
+    <Project Path="Chapter04_Comments/Ex01_TheThingNamer3000/Ex01_TheThingNamer3000.csproj" Id="bf047a1f-7794-4743-957f-9371397ce094" />
+  </Folder>
+  <Folder Name="/Chapter05_Variables/">
+    <File Path="Chapter04_Comments/Ex01_TheThingNamer3000/README.md" />
+    <Project Path="Chapter05_Variables/Ex01_Variables/Ex01_Variables.csproj" Id="e7cb66f6-efdb-453d-853d-32bcb737e066" />
+  </Folder>
 </Solution>
