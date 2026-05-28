@@ -1,14 +1,27 @@
-Variables
+The Thing Namer 3000
 -
-Check your knowledge with the following questions:
-1. Name the three things all variables have.
-2. True/False. Variables must always be declared before being used.
-3. Can you redeclare a variable?
-4. Which of the following are legal C# variable names? 
-   answer, 1stValue, value1, $message, delete-me, delete_me, PI.
+As you walk through the city of Commenton, admiring its forward-slash-based architectural buildings, a
+young man approaches you in a panic. “I dropped my Thing Namer 3000 and broke it. I think it’s mostly
+working, but all my variable names got reset! I don’t understand what they do!” He shows you the
+following program:
+```C#
+Console.WriteLine("What kind of thing are we talking about?");
+string a = Console.ReadLine();
+Console.WriteLine("How would you describe it? Big? Azure? Tattered?");
+string b = Console.ReadLine();
+string c = "of Doom";
+string d = "3000";
+Console.WriteLine("The " + b + " " + a + " of " + c + " " + d + "!");
+```
+“You gotta help me figure it out!”
 
 ---
-1. Type, name, value
-2. True
-3. No
-4. answer, value1, delete_me, PI
+#### Objectives:
+
+- Rebuild the program above on your computer
+- Add comments near each of the four variables that describe what they store. You must use at least one of each comment type (// and /* */).
+- Find the bug in the text displayed and fix it
+- Answer this question: Aside from comments, what else could you do to make this code more understandable?
+
+---
+For instance, I could name the variable a little bit better
