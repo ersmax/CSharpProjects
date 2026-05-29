@@ -14,4 +14,13 @@
   <Folder Name="/Chapter05_Variables/">
     <Project Path="Chapter05_Variables/Ex01_Variables/Ex01_Variables.csproj" Id="e7cb66f6-efdb-453d-853d-32bcb737e066" />
   </Folder>
+  <Folder Name="/Chapter06_Types/">
+    <Project Path="Chapter06_Types/Ex01_VariableShop/Ex01_VariableShop.csproj" />
+    <Project Path="Chapter06_Types/Ex02_VariableShopReturns/Ex02_VariableShopReturns.csproj" Id="53866614-9add-48ff-9536-73185e71fabc" />
+    <Project Path="Chapter06_Types/Ex03_TypeSystem/Ex03_TypeSystem.csproj" Id="10051974-7fec-4a47-bebc-fcc592763001" />
+  </Folder>
+  <Folder Name="/Chapter07_Math/">
+    <Project Path="Chapter07_Math/Ex01_TheTriangleFarmer/Ex01_TheTriangleFarmer.csproj" Id="8a3f4d40-2f49-471a-b3ad-1796f5f21008" />
+  </Folder>
+  <Project Path="Playground/Playground.csproj" Id="860be32e-94f5-480e-850b-f8bf5486fe11" />
 </Solution>
