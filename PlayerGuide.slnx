@@ -22,6 +22,7 @@
   <Folder Name="/Chapter07_Math/">
     <Project Path="Chapter07_Math/Ex01_TheTriangleFarmer/Ex01_TheTriangleFarmer.csproj" Id="8a3f4d40-2f49-471a-b3ad-1796f5f21008" />
     <Project Path="Chapter07_Math/Ex02_FourSistersAndDuckbear/Ex02_FourSistersAndDuckbear.csproj" Id="76684310-b4be-4108-b8a1-75a4f5c80c46" />
+    <Project Path="Chapter07_Math/Ex03_DominionOfKings/Ex03_DominionOfKings.csproj" Id="e6c3fc11-b42e-493f-b076-9bab143146cf" />
   </Folder>
   <Project Path="Playground/Playground.csproj" Id="860be32e-94f5-480e-850b-f8bf5486fe11" />
 </Solution>
