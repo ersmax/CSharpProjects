@@ -26,7 +26,7 @@
   </Folder>
   <Folder Name="/Chapter08_Console/">
     <Project Path="Chapter08_Console/Demo01_StringInterpolation/Demo01_StringInterpolation.csproj" Id="73c87e3f-9167-4648-882c-9e50c7b8872d" />
-    <Project Path="Ex01_DefenseOfConsolas/Ex01_DefenseOfConsolas.csproj" Id="f144b2ba-4661-4d86-836d-64aff81ef323" />
+    <Project Path="Chapter08_Console/Ex01_DefenseOfConsolas/Ex01_DefenseOfConsolas.csproj" />
   </Folder>
   <Project Path="Playground/Playground.csproj" Id="860be32e-94f5-480e-850b-f8bf5486fe11" />
 </Solution>
