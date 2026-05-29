@@ -1,7 +1,7 @@
 ﻿Console.Title = "Defense of Consolas";
-Console.Write("Target Row? ");
+Console.Write("Target Row (1-8)? ");
 int targetRow = Convert.ToInt32(Console.ReadLine());
-Console.Write("Target Column? ");
+Console.Write("Target Column (1-8)? ");
 int targetColumn = Convert.ToInt32(Console.ReadLine());
 
 // ensure target is in range
@@ -12,22 +12,12 @@ Console.ForegroundColor = ConsoleColor.DarkRed;
 Console.WriteLine($"Target is at (row, column): ({targetRow}, {targetColumn})");
 Console.ForegroundColor = ConsoleColor.White;
 
-int rowPawn1 = targetRow - 1;
-int colPawn1 = targetColumn;
-int rowPawn2 = targetRow;
-int colPawn2 = targetColumn + 1;
-int rowPawn3 = targetRow + 1;
-int colPawn3 = targetColumn;
-int rowPawn4 = targetRow;
-int colPawn4 = targetColumn - 1;
-
-
 Console.WriteLine("Deploy to:");
 Console.ForegroundColor = ConsoleColor.Green;
-Console.WriteLine($"({rowPawn1}, {colPawn1})");
-Console.WriteLine($"({rowPawn2}, {colPawn2})");
-Console.WriteLine($"({rowPawn3}, {colPawn3})");
-Console.WriteLine($"({rowPawn4}, {colPawn4})");
+Console.WriteLine($"({targetRow - 1}, {targetColumn})");
+Console.WriteLine($"({targetRow}, {targetColumn + 1})");
+Console.WriteLine($"({targetRow + 1}, {targetColumn})");
+Console.WriteLine($"({targetRow}, {targetColumn - 1})");
 Console.Beep();
 
 Console.ForegroundColor = ConsoleColor.White;
