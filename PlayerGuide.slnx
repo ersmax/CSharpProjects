@@ -32,5 +32,9 @@
     <Project Path="Chapter09_DecisionMaking/Ex01_RepairingClocktower/Ex01_RepairingClocktower.csproj" Id="f25da0a4-3b7a-4c18-9d15-f95e87363a17" />
     <Project Path="Chapter09_DecisionMaking/Ex02_Watchtower/Ex02_Watchtower.csproj" Id="82d63bc7-21ad-4973-a3ae-50901ab8667e" />
   </Folder>
+  <Folder Name="/Chapter10_Switches/">
+    <Project Path="Chapter10_Switches/Ex01_BuyingInventory/Ex01_BuyingInventory.csproj" Id="975b7b5c-99ed-4a77-825e-a2e53dff710e" />
+    <Project Path="Chapter10_Switches/Ex02_DiscountedInventory/Ex02_DiscountedInventory.csproj" Id="4d46b4e1-0748-4c46-8738-3b6d9158b745" />
+  </Folder>
   <Project Path="Playground/Playground.csproj" Id="860be32e-94f5-480e-850b-f8bf5486fe11" />
 </Solution>

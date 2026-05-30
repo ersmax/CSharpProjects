@@ -8,10 +8,10 @@ Console.Write("y-axis point: ");
 int yPoint = Convert.ToInt32(Console.ReadLine());
 
 Console.WriteLine($"Coordinate (x-y): ({xPoint}, {yPoint})");
-bool isNorth = (yPoint > 0);
-bool isSouth = (yPoint < 0);
-bool isWest = (xPoint < 0);
-bool isEast = (xPoint > 0);
+bool isNorth = yPoint > 0;
+bool isSouth = yPoint < 0;
+bool isWest = xPoint < 0;
+bool isEast = xPoint > 0;
 
 Console.ForegroundColor = ConsoleColor.DarkYellow;
 Console.Write("The enemy is to the ");
