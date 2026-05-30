@@ -47,6 +47,3 @@ string name2 = Console.ReadLine();
 //Console.WriteLine($"#1: {name1, 20}");
 //Console.WriteLine($"#2: {name2, 20}");
 
-
-
-

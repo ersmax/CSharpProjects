@@ -28,5 +28,9 @@
     <Project Path="Chapter08_Console/Demo01_StringInterpolation/Demo01_StringInterpolation.csproj" Id="73c87e3f-9167-4648-882c-9e50c7b8872d" />
     <Project Path="Chapter08_Console/Ex01_DefenseOfConsolas/Ex01_DefenseOfConsolas.csproj" />
   </Folder>
+  <Folder Name="/Chapter09_DecisionMaking/">
+    <Project Path="Chapter09_DecisionMaking/Ex01_RepairingClocktower/Ex01_RepairingClocktower.csproj" Id="f25da0a4-3b7a-4c18-9d15-f95e87363a17" />
+    <Project Path="Chapter09_DecisionMaking/Ex02_Watchtower/Ex02_Watchtower.csproj" Id="82d63bc7-21ad-4973-a3ae-50901ab8667e" />
+  </Folder>
   <Project Path="Playground/Playground.csproj" Id="860be32e-94f5-480e-850b-f8bf5486fe11" />
 </Solution>
