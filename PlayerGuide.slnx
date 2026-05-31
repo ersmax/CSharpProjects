@@ -36,5 +36,8 @@
     <Project Path="Chapter10_Switches/Ex01_BuyingInventory/Ex01_BuyingInventory.csproj" Id="975b7b5c-99ed-4a77-825e-a2e53dff710e" />
     <Project Path="Chapter10_Switches/Ex02_DiscountedInventory/Ex02_DiscountedInventory.csproj" Id="4d46b4e1-0748-4c46-8738-3b6d9158b745" />
   </Folder>
+  <Folder Name="/Chapter11_Looping/">
+    <Project Path="Chapter11_Looping/Ex01_ThePrototype/Ex01_ThePrototype.csproj" Id="90c43b27-036d-461f-acd0-f4100a2cf25f" />
+  </Folder>
   <Project Path="Playground/Playground.csproj" Id="860be32e-94f5-480e-850b-f8bf5486fe11" />
 </Solution>
