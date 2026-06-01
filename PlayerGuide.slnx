@@ -40,5 +40,8 @@
     <Project Path="Chapter11_Looping/Ex01_ThePrototype/Ex01_ThePrototype.csproj" Id="90c43b27-036d-461f-acd0-f4100a2cf25f" />
     <Project Path="Chapter11_Looping/Ex02_TheMagicCannon/Ex02_TheMagicCannon.csproj" Id="5ba73f6f-2aeb-49fd-8ccf-9a6f8063a1f8" />
   </Folder>
+  <Folder Name="/Chapter12_Arrays/">
+    <Project Path="Chapter12_Arrays/Ex01_TheReplicatorOfDTo/Ex01_TheReplicatorOfDTo.csproj" Id="37d580ca-5425-491f-b93e-6820fd61b8ea" />
+  </Folder>
   <Project Path="Playground/Playground.csproj" Id="860be32e-94f5-480e-850b-f8bf5486fe11" />
 </Solution>

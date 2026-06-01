@@ -42,8 +42,14 @@ Console.Title = "My title";
 Console.WriteLine($"The result of a ({a}) + a is equal to {a + a} ");
 
 // Testing String interpolation
-string name1 = Console.ReadLine();
-string name2 = Console.ReadLine();
+//string name1 = Console.ReadLine();
+//string name2 = Console.ReadLine();
 //Console.WriteLine($"#1: {name1, 20}");
 //Console.WriteLine($"#2: {name2, 20}");
 
+// Testing arrays
+int[] scores = new int[] {1, 2, 3};
+int[] scores2 = scores[..];
+scores2[^1] = 10;
+for (int idx = 0; idx < scores.Length; idx++)
+    Console.WriteLine(scores[idx]);
