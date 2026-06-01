@@ -42,6 +42,7 @@
   </Folder>
   <Folder Name="/Chapter12_Arrays/">
     <Project Path="Chapter12_Arrays/Ex01_TheReplicatorOfDTo/Ex01_TheReplicatorOfDTo.csproj" Id="37d580ca-5425-491f-b93e-6820fd61b8ea" />
+    <Project Path="Chapter12_Arrays/Ex02_TheLawsOfFreach/Ex02_TheLawsOfFreach.csproj" Id="877a6493-8e0d-4b45-867c-94e0c78f7ccd" />
   </Folder>
   <Project Path="Playground/Playground.csproj" Id="860be32e-94f5-480e-850b-f8bf5486fe11" />
 </Solution>
