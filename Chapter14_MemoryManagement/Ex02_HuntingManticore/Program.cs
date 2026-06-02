@@ -1,6 +1,4 @@
-﻿using System.Reflection.Metadata;
-
-Console.Title = "Hunting the Manticore";
+﻿Console.Title = "Hunting the Manticore";
 
 int round = 1;
 int manticoreHealth = 10;
@@ -8,52 +6,62 @@ int cityHealth = 15;
 
 Console.ForegroundColor = ConsoleColor.Green;
 string user1Text = "Player 1, how far away from the city do you want to station the Manticore?";
-int targetDistance = askNumber(user1Text, 0, 100);
+int targetDistance = askNumberInRange(user1Text, 0, 100);
 
 Console.Clear();
 Console.WriteLine("Player 2, it is your turn.");
 while (manticoreHealth > 0 && cityHealth > 0)
 {
-    Console.WriteLine("-----------------------------------------------------------");
-    Console.ForegroundColor = ConsoleColor.Blue;
-    Console.WriteLine($"STATUS: Round: {round, 3}  City: {cityHealth}/15  Manticore: {manticoreHealth}/10");
-    Console.ForegroundColor = ConsoleColor.Green;
+    statusDisplay(round, cityHealth, manticoreHealth);
 
     Console.Write("This cannon is expected to deal ");
-    int damagePoints = getDamage(round);
+    int damagePoints = computeDamage(round);
     Console.Write(damagePoints);
     Console.ForegroundColor = ConsoleColor.Green;
     Console.WriteLine(" this round.");
 
     string user2Text = "Enter desired cannon range:";
-    int cannonDistance = askNumber(user2Text, 0, 100);
+    int cannonDistance = askNumber(user2Text);
 
     int distanceToTarget = computeDistance(targetDistance, cannonDistance);
-    if (distanceToTarget == 0)
-    {
-        Console.WriteLine("That round was a DIRECT HIT!");
+    showTurnOutcome(distanceToTarget);
+    if (distanceToTarget == 0) 
         manticoreHealth -= damagePoints;
-    }
-    else if (distanceToTarget > 0)
-        Console.WriteLine("That round FELL SHORT of the target.");
-    else
-        Console.WriteLine("That round OVERSHOT of the target.");
 
-    cityHealth--;
+    if (manticoreHealth > 0)    // manticore shoots only if it's alive still
+        cityHealth--;  
     round++;
 }
 cityHealth = Math.Clamp(cityHealth, 0, 15);
 manticoreHealth = Math.Clamp(manticoreHealth, 0, 10);
-drawOutcome(cityHealth, manticoreHealth);
+showOutcome(cityHealth, manticoreHealth);
 
-int askNumber(string text, int min, int max)
+// ------------------ MAIN's METHODS ------------------
+
+// Display the status of the current game
+void statusDisplay(int gameRound, int cityHealth, int manticoreHealth)
+{
+    Console.WriteLine("-----------------------------------------------------------");
+    Console.ForegroundColor = ConsoleColor.Blue;
+    Console.WriteLine($"STATUS: Round: {gameRound, 3}  City: {cityHealth}/15  Manticore: {manticoreHealth}/10");
+    Console.ForegroundColor = ConsoleColor.Green;
+}
+
+// Ask the user a number 
+int askNumber(string text)
+{
+    Console.Write(text + " ");
+    return Convert.ToInt32(Console.ReadLine());
+}
+
+// Ask the user a number in range (min, max)
+int askNumberInRange(string text, int min, int max)
 {
     bool valid = false;
     int number;
     do
     {
-        Console.Write(text + " ");
-        number = Convert.ToInt32(Console.ReadLine());
+        number = askNumber(text);
         if (number >= min && number <= max)
             valid = true;
 
@@ -62,7 +70,8 @@ int askNumber(string text, int min, int max)
     return number;
 }
 
-int getDamage(int roundNumber)
+// Compute the damage from the cannon
+int computeDamage(int roundNumber)
 {
     if (roundNumber % 3 == 0 && roundNumber % 5 == 0)
     {
@@ -81,9 +90,22 @@ int getDamage(int roundNumber)
     }
 }
 
+// Compute the distance from the cannon shot from the target
 int computeDistance(int targetDistance, int cannonDistance) => targetDistance - cannonDistance;
 
-void drawOutcome(int cityHealth, int manticoreHealth)
+// Show results of the game's turn
+void showTurnOutcome(int distanceToTarget)
+{
+    if (distanceToTarget == 0)
+        Console.WriteLine("That round was a DIRECT HIT!");
+    else if (distanceToTarget > 0)
+        Console.WriteLine("That round FELL SHORT of the target.");
+    else if (distanceToTarget < 0)
+        Console.WriteLine("That round OVERSHOT of the target.");
+}
+
+// Show final results of the game
+void showOutcome(int cityHealth, int manticoreHealth)
 {
     Console.ForegroundColor = ConsoleColor.Red;
 
@@ -99,7 +121,8 @@ void drawOutcome(int cityHealth, int manticoreHealth)
     }
     else if (manticoreHealth <= 0)
     {
-        Console.ForegroundColor = ConsoleColor.White;
+        Console.ForegroundColor = ConsoleColor.DarkMagenta;
         Console.WriteLine("The Manticore has been destroyed! The city of Consolas has been saved!");
+        Console.ForegroundColor = ConsoleColor.Gray;
     }
 }
