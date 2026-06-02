@@ -53,3 +53,27 @@ int[] scores2 = scores[..];
 scores2[^1] = 10;
 for (int idx = 0; idx < scores.Length; idx++)
     Console.WriteLine(scores[idx]);
+
+int[][] matrix = new int[3][];
+matrix[0] = new int[] { 1, 2 };
+matrix[1] = new int[] { 3, 4 };
+matrix[2] = new int[] { 5, 6 };
+
+foreach (int[] row in matrix)
+{
+    foreach (int col in row)
+        Console.Write($"{col} ");
+    Console.WriteLine();
+}
+
+int[,] matrixCopy = new int[3,2] {{6, 5}, {4, 3}, {2, 1}};
+
+for (int row = 0; row < matrixCopy.GetLength(0); row++)
+{
+    for (int col = 0; col < matrixCopy.GetLength(1); col++)
+        Console.Write(matrixCopy[row,col] + " ");
+    Console.WriteLine();
+
+}
+
+
