@@ -76,4 +76,27 @@ for (int row = 0; row < matrixCopy.GetLength(0); row++)
 
 }
 
+// Copy by reference 
+int[] aa = new int[3] {1, 2, 3};
+int[] aaa = aa;
+aaa[0] = 0;
+foreach (int element in aa)
+    Console.Write(element + " ");
+Console.WriteLine(aa == aaa);   // true (reference semantic, that is same reference)
 
+// Copy by value
+int[] bb = new int[3] { 1, 2, 3 };
+int[] bbb = bb[..];
+bbb[0] = 0;
+foreach (int element in bb)
+    Console.Write(element + " ");
+Console.WriteLine(bb == bbb);   // false (reference semantic)
+
+// Copy by reference
+string abc = "Hello";
+string abc2 = abc;
+//abc2 = "Different";
+Console.WriteLine(abc == abc2); // true (reference semantic) but..
+
+string abc3 = "Hel" + "lo";
+Console.WriteLine(abc == abc3);  // true (value semantic with overloading)
