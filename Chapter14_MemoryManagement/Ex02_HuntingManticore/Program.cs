@@ -6,25 +6,25 @@ int cityHealth = 15;
 
 Console.ForegroundColor = ConsoleColor.Green;
 string user1Text = "Player 1, how far away from the city do you want to station the Manticore?";
-int targetDistance = askNumberInRange(user1Text, 0, 100);
+int targetDistance = AskNumberInRange(user1Text, 0, 100);
 
 Console.Clear();
 Console.WriteLine("Player 2, it is your turn.");
 while (manticoreHealth > 0 && cityHealth > 0)
 {
-    statusDisplay(round, cityHealth, manticoreHealth);
+    StatusDisplay(round, cityHealth, manticoreHealth);
 
     Console.Write("This cannon is expected to deal ");
-    int damagePoints = computeDamage(round);
+    int damagePoints = ComputeDamage(round);
     Console.Write(damagePoints);
     Console.ForegroundColor = ConsoleColor.Green;
     Console.WriteLine(" this round.");
 
     string user2Text = "Enter desired cannon range:";
-    int cannonDistance = askNumber(user2Text);
+    int cannonDistance = AskNumber(user2Text);
 
-    int distanceToTarget = computeDistance(targetDistance, cannonDistance);
-    showTurnOutcome(distanceToTarget);
+    int distanceToTarget = ComputeDistance(targetDistance, cannonDistance);
+    ShowTurnOutcome(distanceToTarget);
     if (distanceToTarget == 0) 
         manticoreHealth -= damagePoints;
 
@@ -34,12 +34,12 @@ while (manticoreHealth > 0 && cityHealth > 0)
 }
 cityHealth = Math.Clamp(cityHealth, 0, 15);
 manticoreHealth = Math.Clamp(manticoreHealth, 0, 10);
-showOutcome(cityHealth, manticoreHealth);
+ShowGameOutcome(cityHealth, manticoreHealth);
 
 // ------------------ MAIN's METHODS ------------------
 
 // Display the status of the current game
-void statusDisplay(int gameRound, int cityHealth, int manticoreHealth)
+void StatusDisplay(int gameRound, int cityHealth, int manticoreHealth)
 {
     Console.WriteLine("-----------------------------------------------------------");
     Console.ForegroundColor = ConsoleColor.Blue;
@@ -48,20 +48,20 @@ void statusDisplay(int gameRound, int cityHealth, int manticoreHealth)
 }
 
 // Ask the user a number 
-int askNumber(string text)
+int AskNumber(string text)
 {
     Console.Write(text + " ");
     return Convert.ToInt32(Console.ReadLine());
 }
 
 // Ask the user a number in range (min, max)
-int askNumberInRange(string text, int min, int max)
+int AskNumberInRange(string text, int min, int max)
 {
     bool valid = false;
     int number;
     do
     {
-        number = askNumber(text);
+        number = AskNumber(text);
         if (number >= min && number <= max)
             valid = true;
 
@@ -71,7 +71,7 @@ int askNumberInRange(string text, int min, int max)
 }
 
 // Compute the damage from the cannon
-int computeDamage(int roundNumber)
+int ComputeDamage(int roundNumber)
 {
     if (roundNumber % 3 == 0 && roundNumber % 5 == 0)
     {
@@ -91,10 +91,10 @@ int computeDamage(int roundNumber)
 }
 
 // Compute the distance from the cannon shot from the target
-int computeDistance(int targetDistance, int cannonDistance) => targetDistance - cannonDistance;
+int ComputeDistance(int targetDistance, int cannonDistance) => targetDistance - cannonDistance;
 
 // Show results of the game's turn
-void showTurnOutcome(int distanceToTarget)
+void ShowTurnOutcome(int distanceToTarget)
 {
     if (distanceToTarget == 0)
         Console.WriteLine("That round was a DIRECT HIT!");
@@ -105,7 +105,7 @@ void showTurnOutcome(int distanceToTarget)
 }
 
 // Show final results of the game
-void showOutcome(int cityHealth, int manticoreHealth)
+void ShowGameOutcome(int cityHealth, int manticoreHealth)
 {
     Console.ForegroundColor = ConsoleColor.Red;
 
