@@ -12,7 +12,7 @@ int targetDistance = askNumber(user1Text, 0, 100);
 
 Console.Clear();
 Console.WriteLine("Player 2, it is your turn.");
-while (manticoreHealth > 0 || cityHealth > 0)
+while (manticoreHealth > 0 && cityHealth > 0)
 {
     Console.WriteLine("-----------------------------------------------------------");
     Console.ForegroundColor = ConsoleColor.Blue;
@@ -99,7 +99,7 @@ void drawOutcome(int cityHealth, int manticoreHealth)
     }
     else if (manticoreHealth <= 0)
     {
-        Console.ForegroundColor = ConsoleColor.Green;
+        Console.ForegroundColor = ConsoleColor.White;
         Console.WriteLine("The Manticore has been destroyed! The city of Consolas has been saved!");
     }
 }
