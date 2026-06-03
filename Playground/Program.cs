@@ -100,3 +100,9 @@ Console.WriteLine(abc == abc2); // true (reference semantic) but..
 
 string abc3 = "Hel" + "lo";
 Console.WriteLine(abc == abc3);  // true (value semantic with overloading)
+
+
+// Testing enumerations
+Season current = Season.Summer;
+Console.WriteLine(current);
+enum Season { Winter, Spring, Summer, Fall};
