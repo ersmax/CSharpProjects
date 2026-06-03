@@ -101,8 +101,23 @@ Console.WriteLine(abc == abc2); // true (reference semantic) but..
 string abc3 = "Hel" + "lo";
 Console.WriteLine(abc == abc3);  // true (value semantic with overloading)
 
-
 // Testing enumerations
-Season current = Season.Summer;
-Console.WriteLine(current);
-enum Season { Winter, Spring, Summer, Fall};
+//Season current = Season.Summer;
+//Console.WriteLine(current);
+//enum Season { Winter, Spring, Summer, Fall};
+
+// Testing tuples equality
+var tupleA = (X: 1, Y: 2);
+var tupleB = (Z: 1, ZY: 2);
+Console.WriteLine(tupleA == tupleB);
+
+
+(string Name, int Points, int Level)[] CreateHighScores()
+{
+    return new (string, int, int)[3]
+    {
+        ("Paul", 15, 1),
+        ("John", 10, 2),
+        ("Red", 8, 1)
+    };
+}

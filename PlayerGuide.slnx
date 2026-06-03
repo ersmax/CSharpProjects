@@ -59,5 +59,8 @@
   <Folder Name="/Chapter16_Enumerations/">
     <Project Path="Chapter16_Enumerations/Ex01_SimulaTest/Ex01_SimulaTest.csproj" Id="f540d193-5105-41ba-816f-a9fd2e3da1e8" />
   </Folder>
+  <Folder Name="/Chapter17_Tuples/">
+    <Project Path="Chapter17_Tuples/Ex01_SimulaSoup/Ex01_SimulaSoup.csproj" Id="76280947-8ed6-4d42-b4a0-823c54c7e9d0" />
+  </Folder>
   <Project Path="Playground/Playground.csproj" Id="860be32e-94f5-480e-850b-f8bf5486fe11" />
 </Solution>
