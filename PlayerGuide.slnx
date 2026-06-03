@@ -53,5 +53,8 @@
     <Project Path="Chapter14_MemoryManagement/Ex01_Memory/Ex01_Memory.csproj" Id="73504ecc-4248-43df-83e4-8435d429674d" />
     <Project Path="Chapter14_MemoryManagement/Ex02_HuntingManticore/Ex02_HuntingManticore.csproj" Id="9bac7713-515e-42ba-9e2c-ffd2446bbf46" />
   </Folder>
+  <Folder Name="/Chapter15_ObjectOrientedConcepts/">
+    <Project Path="Chapter15_ObjectOrientedConcepts/Ex01_Objects/Ex01_Objects.csproj" Id="3b153a58-2495-4a14-8692-c26f91c70fc5" />
+  </Folder>
   <Project Path="Playground/Playground.csproj" Id="860be32e-94f5-480e-850b-f8bf5486fe11" />
 </Solution>
