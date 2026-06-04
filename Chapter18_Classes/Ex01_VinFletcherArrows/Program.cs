@@ -7,7 +7,7 @@ Console.WriteLine($"\nYour arrow with head {myArrow._arrowhead}, " +
     $"and length {myArrow._shaftLength} " +
     $"costs {myArrow.GetCost():F2}");
 
-
+// Choose a new arrow instance variables
 Arrow GetArrow()
 {
     Console.WriteLine("Choose your arrow");
@@ -17,6 +17,7 @@ Arrow GetArrow()
     return new Arrow(newArrowhead, newFletching, newShaftLength);
 } 
 
+// Choose new arrow head and parse enumerable
 Arrowhead ChooseArrowhead()
 {
     string[] arrowheads = Enum.GetNames<Arrowhead>();
@@ -37,24 +38,25 @@ Arrowhead ChooseArrowhead()
     return chosenArrowhead;
 }
 
+// Choose arrow fletching, parse enumerable, convert PascalWords into words with space
 Fletching ChooseFletching()
 {
     string[] fletchings = Enum.GetNames<Fletching>();
     string choices = "";
 
-    // Separate PascalCase words into Pascal Case
-    int counter = 1;
+    // Separate "PascalCase" words into "Pascal Case" words
+    int wordCounter = 1;
     foreach (string word in fletchings)
     {
         string adjustedWord = "";
-        for (int idx = 0; idx < word.Length; idx++)
+        for (int idxChar = 0; idxChar < word.Length; idxChar++)
         {
-            if (idx > 0 && char.IsUpper(word[idx]))
+            if (idxChar > 0 && char.IsUpper(word[idxChar]))
                 adjustedWord += ' ';
-            adjustedWord += word[idx];
+            adjustedWord += word[idxChar];
         }
-        choices += $"{counter,3} - \"{adjustedWord}\"\n";
-        counter++;
+        choices += $"{wordCounter, 3} - \"{adjustedWord}\"\n";
+        wordCounter++;
     }
 
     int choice = 0;
@@ -70,6 +72,7 @@ Fletching ChooseFletching()
     return chosenFletching;
 }
 
+// Choose arrow length
 float ChooseShaftLength()
 {
     float length = 0f;
@@ -95,20 +98,25 @@ class Arrow
         _shaftLength = shaftLength;
     }
 
+    // Compute cost of an arrow based on the instance variables
     public float GetCost()
     {
         float arrowheadCost = _arrowhead switch
         {
             Arrowhead.Steel => 10,
-            Arrowhead.Wood => 3, 
+            Arrowhead.Wood => 3,
             Arrowhead.Obsidian => 5,
+            _ => throw new NotImplementedException(),
         };
+
         float fletchingCost = _fletching switch 
         {
             Fletching.Plastic => 10,
             Fletching.TurkeyFeathers => 5,
             Fletching.GooseFeathers => 3,
+            _ => throw new NotImplementedException(),
         };
+
         float shaftCost = _shaftLength * 0.05f;
 
         return arrowheadCost + fletchingCost + shaftCost;
