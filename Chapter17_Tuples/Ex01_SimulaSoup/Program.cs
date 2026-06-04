@@ -30,14 +30,14 @@ Type ChooseType()
         Console.ForegroundColor = ConsoleColor.Blue;
         Console.WriteLine("Choose among these: Soup, Stew, Gumbo");
         Console.ForegroundColor = ConsoleColor.Gray;
-        
-        string input = Console.ReadLine();
-        if (input == "Soup")    return Type.Soup;
-        if (input == "Stew")    return Type.Stew;
-        if (input == "Gumbo")   return Type.Gumbo;
-        
+
+        string input = Console.ReadLine().ToLower();    // lowercase-ify
+        if (input == "soup") return Type.Soup;
+        if (input == "stew") return Type.Stew;
+        if (input == "gumbo") return Type.Gumbo;
+
         Console.WriteLine("Not a valid type");
-    } 
+    }
 }
 
 MainIngredient ChooseMainIngredient()
@@ -48,11 +48,11 @@ MainIngredient ChooseMainIngredient()
         Console.WriteLine("Choose among these: Mushrooms, Chicken, Carrots, Potatoes");
         Console.ForegroundColor = ConsoleColor.Gray;
 
-        string input = Console.ReadLine();
-        if (input == "Mushrooms")   return MainIngredient.Mushrooms;
-        if (input == "Chicken")     return MainIngredient.Chicken;
-        if (input == "Carrots")     return MainIngredient.Carrots;
-        if (input == "Potatoes")    return MainIngredient.Potatoes;
+        string input = Console.ReadLine().ToLower();    // lowercase-ify
+        if (input == "mushrooms") return MainIngredient.Mushrooms;
+        if (input == "chicken") return MainIngredient.Chicken;
+        if (input == "carrots") return MainIngredient.Carrots;
+        if (input == "potatoes") return MainIngredient.Potatoes;
 
         Console.WriteLine("Not a valid main ingredient");
     }
@@ -65,8 +65,8 @@ Seasoning ChooseSeasoning()
         Console.WriteLine("Choose among these: Spicy, Salty, Sweet");
         Console.ForegroundColor = ConsoleColor.Gray;
 
-        string input = Console.ReadLine();
-        if (input != "Spicy" && input != "Salty" && input != "Sweet")
+        string input = Console.ReadLine().ToLower();    // lowercase-ify
+        if (input != "spicy" && input != "salty" && input != "sweet")
         {
             Console.WriteLine("Not a valid seasoning");
             continue;
@@ -74,15 +74,15 @@ Seasoning ChooseSeasoning()
 
         return input switch
         {
-            "Spicy" => Seasoning.Spicy,
-            "Salty" => Seasoning.Salty,
-            "Sweet" => Seasoning.Sweet,
+            "spicy" => Seasoning.Spicy,
+            "salty" => Seasoning.Salty,
+            "sweet" => Seasoning.Sweet,
         };
     }
 }
 
 
 // --------- ENUMERABLE ---------
-enum Type { Soup, Stew, Gumbo};
-enum MainIngredient { Mushrooms, Chicken, Carrots, Potatoes};
-enum Seasoning { Spicy, Salty, Sweet};
+enum Type { Soup, Stew, Gumbo };
+enum MainIngredient { Mushrooms, Chicken, Carrots, Potatoes };
+enum Seasoning { Spicy, Salty, Sweet };

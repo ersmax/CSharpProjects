@@ -57,6 +57,7 @@
     <Project Path="Chapter15_ObjectOrientedConcepts/Ex01_Objects/Ex01_Objects.csproj" Id="3b153a58-2495-4a14-8692-c26f91c70fc5" />
   </Folder>
   <Folder Name="/Chapter16_Enumerations/">
+    <Project Path="Chapter16_Enumerations/Demo01_ParsingEnumerations/Demo01_ParsingEnumerations.csproj" Id="a485a3a4-dc99-4d9e-b40c-283a39ab17d6" />
     <Project Path="Chapter16_Enumerations/Ex01_SimulaTest/Ex01_SimulaTest.csproj" Id="f540d193-5105-41ba-816f-a9fd2e3da1e8" />
   </Folder>
   <Folder Name="/Chapter17_Tuples/">
