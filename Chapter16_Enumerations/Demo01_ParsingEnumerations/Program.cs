@@ -1,4 +1,6 @@
-﻿// --- switch based parsing using strings ---
+﻿Console.Title = "Parsing enumerations";
+
+// --- switch based parsing using strings ---
 Console.WriteLine(
     "What type of elixir do you want? Options are 'invisibility', 'strength', 'regeneration', and 'coffee'.");
 string input = Console.ReadLine().ToLower();    // lowercase-ify
