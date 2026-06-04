@@ -63,5 +63,9 @@
   <Folder Name="/Chapter17_Tuples/">
     <Project Path="Chapter17_Tuples/Ex01_SimulaSoup/Ex01_SimulaSoup.csproj" Id="76280947-8ed6-4d42-b4a0-823c54c7e9d0" />
   </Folder>
+  <Folder Name="/Chapter18_Classes/">
+    <Project Path="Chapter18_Classes/Demo01_TetrisScores/Demo01_TetrisScores.csproj" Id="cdfc39af-2f8a-439d-995a-f52fcbf08872" />
+    <Project Path="Chapter18_Classes/Ex01_VinFletcherArrows/Ex01_VinFletcherArrows.csproj" Id="4498fee5-daf0-4f19-b5ce-733d38878b0b" />
+  </Folder>
   <Project Path="Playground/Playground.csproj" Id="860be32e-94f5-480e-850b-f8bf5486fe11" />
 </Solution>
