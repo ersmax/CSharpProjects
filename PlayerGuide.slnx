@@ -67,5 +67,8 @@
     <Project Path="Chapter18_Classes/Demo01_TetrisScores/Demo01_TetrisScores.csproj" Id="cdfc39af-2f8a-439d-995a-f52fcbf08872" />
     <Project Path="Chapter18_Classes/Ex01_VinFletcherArrows/Ex01_VinFletcherArrows.csproj" Id="4498fee5-daf0-4f19-b5ce-733d38878b0b" />
   </Folder>
+  <Folder Name="/Chapter19_InformationHiding/">
+    <Project Path="Chapter19_InformationHiding/Demo01_AccessibilityModifiers/Demo01_AccessibilityModifiers.csproj" Id="67f29f03-ac5f-4aff-a8ac-36f13356b9b4" />
+  </Folder>
   <Project Path="Playground/Playground.csproj" Id="860be32e-94f5-480e-850b-f8bf5486fe11" />
 </Solution>
