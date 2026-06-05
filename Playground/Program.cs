@@ -121,3 +121,7 @@ Console.WriteLine(tupleA == tupleB);
         ("Red", 8, 1)
     };
 }
+
+// Anonymous type
+var anonymous = new {Name = "Steve", Age = 50};
+Console.WriteLine($"{anonymous.Name} is {anonymous.Age}");
