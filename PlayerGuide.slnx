@@ -69,6 +69,11 @@
   </Folder>
   <Folder Name="/Chapter19_InformationHiding/">
     <Project Path="Chapter19_InformationHiding/Demo01_AccessibilityModifiers/Demo01_AccessibilityModifiers.csproj" Id="67f29f03-ac5f-4aff-a8ac-36f13356b9b4" />
+    <Project Path="Chapter19_InformationHiding/Ex01_VinTrouble/Ex01_VinTrouble.csproj" Id="896a63ad-6c4e-43bb-9d79-6f9cb71267f9" />
+  </Folder>
+  <Folder Name="/Chapter20_Properties/">
+    <Project Path="Chapter20_Properties/Demo01_Properties/Demo01_Properties.csproj" />
+    <Project Path="Chapter20_Properties/Demo02_ObjectInitializerInitProperty/Demo02_ObjectInitializerInitProperty.csproj" Id="a03a9505-0375-434b-912c-735e34029242" />
   </Folder>
   <Project Path="Playground/Playground.csproj" Id="860be32e-94f5-480e-850b-f8bf5486fe11" />
 </Solution>
