@@ -78,6 +78,7 @@
   </Folder>
   <Folder Name="/Chapter21_Static/">
     <Project Path="Chapter21_Static/Demo01_StaticMembers/Demo01_StaticMembers.csproj" Id="b1ff39c6-62e3-4730-9cb5-07ecd1b14a7c" />
+    <Project Path="Chapter21_Static/Ex01_ArrowFactories/Ex01_ArrowFactories.csproj" Id="451562c7-8a7d-4064-901a-bc37320f9776" />
   </Folder>
   <Project Path="Playground/Playground.csproj" Id="860be32e-94f5-480e-850b-f8bf5486fe11" />
 </Solution>
