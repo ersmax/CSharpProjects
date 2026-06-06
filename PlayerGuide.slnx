@@ -76,5 +76,8 @@
     <Project Path="Chapter20_Properties/Demo02_ObjectInitializerInitProperty/Demo02_ObjectInitializerInitProperty.csproj" Id="a03a9505-0375-434b-912c-735e34029242" />
     <Project Path="Chapter20_Properties/Ex01_ThePropertiesOfArrows/Ex01_ThePropertiesOfArrows.csproj" Id="a657c81d-0ea8-457c-a052-c1fc11692abb" />
   </Folder>
+  <Folder Name="/Chapter21_Static/">
+    <Project Path="Chapter21_Static/Demo01_StaticMembers/Demo01_StaticMembers.csproj" Id="b1ff39c6-62e3-4730-9cb5-07ecd1b14a7c" />
+  </Folder>
   <Project Path="Playground/Playground.csproj" Id="860be32e-94f5-480e-850b-f8bf5486fe11" />
 </Solution>
