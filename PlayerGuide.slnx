@@ -80,5 +80,8 @@
     <Project Path="Chapter21_Static/Demo01_StaticMembers/Demo01_StaticMembers.csproj" Id="b1ff39c6-62e3-4730-9cb5-07ecd1b14a7c" />
     <Project Path="Chapter21_Static/Ex01_ArrowFactories/Ex01_ArrowFactories.csproj" Id="451562c7-8a7d-4064-901a-bc37320f9776" />
   </Folder>
+  <Folder Name="/Chapter23_ObjectOrientedDesign/">
+    <Project Path="Chapter23_ObjectOrientedDesign/Demo01_Spaceship/Demo01_Spaceship.csproj" Id="a1df4b0c-0f33-4cf0-9b6e-74a5a35e6a85" />
+  </Folder>
   <Project Path="Playground/Playground.csproj" Id="860be32e-94f5-480e-850b-f8bf5486fe11" />
 </Solution>

@@ -125,3 +125,29 @@ Console.WriteLine(tupleA == tupleB);
 // Anonymous type
 var anonymous = new {Name = "Steve", Age = 50};
 Console.WriteLine($"{anonymous.Name} is {anonymous.Age}");
+
+// Testing null values
+string? name = Console.ReadLine();
+if (name != null)                   // crash with ctrl + Z otherwise
+    Console.WriteLine(name.Length);
+
+// Null coalescing operator ??
+{
+    name ??= "not found";
+    Console.WriteLine(name.Length);
+}
+{
+    string anotherName = Console.ReadLine() ?? "no name";
+    Console.WriteLine(anotherName.Length);
+}
+
+// Null-forgiving operator !
+{
+    string message = MightReturnNullIfNegative(+10)!;
+    Console.WriteLine(message.Length);
+    
+    string? MightReturnNullIfNegative(int number)
+    {
+        return (number > 0) ? "hello" : null;
+    }
+}
