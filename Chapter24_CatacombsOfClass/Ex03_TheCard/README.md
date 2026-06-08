@@ -15,5 +15,7 @@ The third pedestal requires that you create a class to represent a card of this 
 
 ---
 
-
+Enumeration is useful because it allows to enter only valid input among those that
+are presented to the user. If we used byte to represent the three channels of RGB for 
+each color, we would get too many options (thousands) when we in fact need only 4 colors.
 
