@@ -1,4 +1,4 @@
-The Properties of Arrows
+The Point
 -
 The first pedestal asks you to create a Point class to store a point in two dimensions. Each point is
 represented by an x-coordinate (x), a side-to-side distance from a special central point called the origin,

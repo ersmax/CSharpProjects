@@ -85,6 +85,7 @@
   </Folder>
   <Folder Name="/Chapter24_CatacombsOfClass/">
     <Project Path="Chapter24_CatacombsOfClass/Ex01_ThePoint/Ex01_ThePoint.csproj" Id="0fda2c48-fb2e-4d6e-a71a-d3233786afcc" />
+    <Project Path="Chapter24_CatacombsOfClass/Ex02_TheColor/Ex02_TheColor.csproj" Id="ad068d47-dbf4-454e-9800-6de0f6618dfd" />
   </Folder>
   <Project Path="Playground/Playground.csproj" Id="860be32e-94f5-480e-850b-f8bf5486fe11" />
 </Solution>
