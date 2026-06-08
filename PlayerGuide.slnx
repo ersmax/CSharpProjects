@@ -83,5 +83,8 @@
   <Folder Name="/Chapter23_ObjectOrientedDesign/">
     <Project Path="Chapter23_ObjectOrientedDesign/Demo01_Spaceship/Demo01_Spaceship.csproj" Id="a1df4b0c-0f33-4cf0-9b6e-74a5a35e6a85" />
   </Folder>
+  <Folder Name="/Chapter24_CatacombsOfClass/">
+    <Project Path="Chapter24_CatacombsOfClass/Ex01_ThePoint/Ex01_ThePoint.csproj" Id="0fda2c48-fb2e-4d6e-a71a-d3233786afcc" />
+  </Folder>
   <Project Path="Playground/Playground.csproj" Id="860be32e-94f5-480e-850b-f8bf5486fe11" />
 </Solution>
