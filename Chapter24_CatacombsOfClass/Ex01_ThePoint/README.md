@@ -16,6 +16,5 @@ and a y-coordinate (y), an up-and-down distance away from the origin.
 ---
 Answers:
 
-- X and Y properties are immutable, since they have private access modifier.
-- It is so to preserve the information hiding OOP: only the object itself should 
-  directly access its data.
+- X and Y properties are immutable, since they don't have set methods.
+- It is so to better control the object behavior
