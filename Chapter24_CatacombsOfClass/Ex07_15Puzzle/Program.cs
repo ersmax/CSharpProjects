@@ -55,7 +55,7 @@ public class Player
         string input = "not valid";
         while (!validInput)
         {
-            Console.WriteLine($"Choose one of the following moves: {options}");
+            Console.WriteLine($"Choose one of the following moves: {display}");
             Console.Write("> ");
             input = Console.ReadLine() ?? "not valid";
             foreach (string option in options)
