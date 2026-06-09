@@ -48,11 +48,18 @@ My solution (CRC class-responsibilities-collaborators):
 |initialize the board   | Board   |
 |   |   |
 
+- The fourth class COORDINATE manages the point X and Y on the grid
+
+|COORDINATE |
+|---|---|
+|knows the (x, y) coordinates of a tile   |    |
+|   |   |
+
 - The last class GAME orchestrates the Game 
 
 |GAME |
 |---|---|
-|maange the game	| Player  |
+|manange the game flow	| Player  |
 |					| Board  |
 |					| Generator  |
 |   |   |
