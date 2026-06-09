@@ -88,6 +88,7 @@
     <Project Path="Chapter24_CatacombsOfClass/Ex02_TheColor/Ex02_TheColor.csproj" Id="ad068d47-dbf4-454e-9800-6de0f6618dfd" />
     <Project Path="Chapter24_CatacombsOfClass/Ex03_TheCard/Ex03_TheCard.csproj" Id="51bcb6bf-e289-4cb5-b45f-79924cb57886" />
     <Project Path="Chapter24_CatacombsOfClass/Ex04_TheLockedDoor/Ex04_TheLockedDoor.csproj" Id="8640e63e-ce65-454a-83ed-5f8397bf2c62" />
+    <Project Path="Chapter24_CatacombsOfClass/Ex05_ThePasswordValidator/Ex05_ThePasswordValidator.csproj" Id="ad27c818-7c0e-49e4-8b24-801bd3513307" />
   </Folder>
   <Project Path="Playground/Playground.csproj" Id="860be32e-94f5-480e-850b-f8bf5486fe11" />
 </Solution>
