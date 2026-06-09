@@ -1,16 +1,29 @@
 ﻿Console.Title = "15-Puzzle";
 
+Game aGame = new Game();
+aGame.Play();
 
 public class Game
 {
-    void Play()
+    public void Play()
     {
         Board grid = new Board();
+        Player player = new Player();
+        grid.ShowGrid();
         
         while (!grid.Win())
         {
+            player.AttemptToMove(grid);
+            Console.Clear();
+            Console.WriteLine($"Number of moves: {Player.MoveCount}");
             grid.ShowGrid();
         }
+
+        Console.ForegroundColor = ConsoleColor.DarkGreen;
+        Console.WriteLine("Game over!");
+        Console.ForegroundColor = ConsoleColor.White;
+        Console.WriteLine("Press a key");
+        Console.ReadKey(true);
     }
 }
 
