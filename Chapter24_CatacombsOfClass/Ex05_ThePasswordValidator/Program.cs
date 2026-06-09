@@ -15,18 +15,18 @@ while (true)
 
 public class PasswordValidator
 {
-    public string Password { get; set; }
+    private readonly string _password;
     public bool IsValid { get; }
 
     public PasswordValidator(string password)
     {
-        Password = password;
+        _password = password;
         IsValid = ValidPassword();
     }
 
     private bool ValidPassword()
     {
-        if (Password.Length is < 6 or > 13)
+        if (_password.Length is < 6 or > 13)
             return false;
 
         bool hasUppercase = false;
@@ -35,7 +35,7 @@ public class PasswordValidator
         bool hasUppercaseT = false;
         bool hasAmpersand = false;
         
-        foreach (char letter in Password)
+        foreach (char letter in _password)
         {
             if (char.IsUpper(letter)) hasUppercase = true;
             if (char.IsLower(letter)) hasLowercase = true;
