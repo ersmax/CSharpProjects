@@ -34,7 +34,7 @@ public class PasswordValidator
         
         foreach (char letter in password)
         {
-            // use short-circuit where possible
+            // use short-circuit when possible
             if (!hasUppercase && char.IsUpper(letter)) hasUppercase = true;
             if (!hasLowercase && char.IsLower(letter)) hasLowercase = true;
             if (!hasDigit && char.IsDigit(letter)) hasDigit = true;
