@@ -15,19 +15,16 @@ while (true)
 
 public class PasswordValidator
 {
-    private readonly string _password;
     public bool IsValid { get; }
 
     public PasswordValidator(string password)
     {
-        _password = password;
-        IsValid = ValidPassword();
+        IsValid = ValidPassword(password);
     }
 
-    private bool ValidPassword()
+    private bool ValidPassword(string password)
     {
-        if (_password.Length is < 6 or > 13)
-            return false;
+        if (password.Length is < 6 or > 13) return false;
 
         bool hasUppercase = false;
         bool hasLowercase = false;
@@ -35,14 +32,15 @@ public class PasswordValidator
         bool hasUppercaseT = false;
         bool hasAmpersand = false;
         
-        foreach (char letter in _password)
+        foreach (char letter in password)
         {
-            if (char.IsUpper(letter)) hasUppercase = true;
-            if (char.IsLower(letter)) hasLowercase = true;
-            if (char.IsDigit(letter)) hasDigit = true;
-            if (letter == 'T') hasUppercaseT = true;
-            if (letter == '&') hasAmpersand = true;
+            // use short-circuit where possible
+            if (!hasUppercase && char.IsUpper(letter)) hasUppercase = true;
+            if (!hasLowercase && char.IsLower(letter)) hasLowercase = true;
+            if (!hasDigit && char.IsDigit(letter)) hasDigit = true;
+            if (!hasUppercaseT && letter == 'T') return false;
+            if (!hasAmpersand && letter == '&') return false;
         }
-        return (hasUppercase && hasLowercase && hasDigit && !hasUppercaseT && !hasAmpersand);
+        return (hasUppercase && hasLowercase && hasDigit);
     }
 }
