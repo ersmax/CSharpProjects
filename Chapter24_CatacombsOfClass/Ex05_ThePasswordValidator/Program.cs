@@ -29,17 +29,14 @@ public class PasswordValidator
         bool hasUppercase = false;
         bool hasLowercase = false;
         bool hasDigit = false;
-        bool hasUppercaseT = false;
-        bool hasAmpersand = false;
-        
         foreach (char letter in password)
         {
             // use short-circuit when possible
+            if (letter == 'T') return false;
+            if (letter == '&') return false;
             if (!hasUppercase && char.IsUpper(letter)) hasUppercase = true;
             if (!hasLowercase && char.IsLower(letter)) hasLowercase = true;
             if (!hasDigit && char.IsDigit(letter)) hasDigit = true;
-            if (!hasUppercaseT && letter == 'T') return false;
-            if (!hasAmpersand && letter == '&') return false;
         }
         return (hasUppercase && hasLowercase && hasDigit);
     }
