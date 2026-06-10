@@ -13,7 +13,7 @@ public class Game
 
     public Game()
     {
-        _word = new Dictionary().Word;
+        _word = new Generator().Word;
         IncorrectChars = new char[] {};
         CorrectChars = new char[] {};
         LettersToGuess = _word.Length;
@@ -37,13 +37,13 @@ public class Game
         }
         Console.WriteLine();
     }
-    private class Dictionary
+    private class Generator
     {
         internal string Word { get; }
 
         private string[] _list = new string[] { "elephant", "piggy", "teddy", "giraffe", "hippocampus" };
 
-        public Dictionary()
+        public Generator()
         {
             Word = GetWord();
         }
