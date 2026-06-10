@@ -91,6 +91,7 @@
     <Project Path="Chapter24_CatacombsOfClass/Ex05_ThePasswordValidator/Ex05_ThePasswordValidator.csproj" Id="ad27c818-7c0e-49e4-8b24-801bd3513307" />
     <Project Path="Chapter24_CatacombsOfClass/Ex06_RockPaperScissors/Ex06_RockPaperScissors.csproj" Id="ca9f53d8-b1b7-45c8-9b0c-24bf70284a31" />
     <Project Path="Chapter24_CatacombsOfClass/Ex07_15Puzzle/Ex07_15Puzzle.csproj" Id="9e5f35d4-b9c3-4182-8ac7-0e03f0d9eb16" />
+    <Project Path="Chapter24_CatacombsOfClass/Ex08_Hangman/Ex08_Hangman.csproj" Id="22047bf6-131a-4bc3-9a14-2015830fba5c" />
   </Folder>
   <Project Path="Playground/Playground.csproj" Id="860be32e-94f5-480e-850b-f8bf5486fe11" />
 </Solution>
