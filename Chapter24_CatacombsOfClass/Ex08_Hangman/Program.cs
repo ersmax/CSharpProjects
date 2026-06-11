@@ -4,6 +4,9 @@ Player newPlayer = new Player();
 Game aGame = new Game(newPlayer);
 aGame.RunGame();
 
+/// <summary>
+/// This class allows the user to choose a letter and show the guess result
+/// </summary>
 public class Player
 {
     public char ChooseLetter()
@@ -53,10 +56,18 @@ public class Player
     }
 }
 
+/// <summary>
+/// This class checks the guess against the correct word and handle the guessing logic
+/// </summary>
 public class Game
 {
     private readonly string _word;
     private int _lettersToGuess;
+    
+    /// <summary>
+    /// This class generates the word.
+    /// It is private so as not to allows users to create or change the word to be guessed.
+    /// </summary>
     private class Generator
     {
         internal string Word { get; }
@@ -110,6 +121,8 @@ public class Game
 
     }
 
+    // Check if the letter is not already guessed previously. If so, discard.
+    // If it is a new letter, checked if it is present in the word to be guessed.
     private void CheckLetter(char inputLetter)
     {
         inputLetter = char.ToUpper(inputLetter);
@@ -155,4 +168,3 @@ public class Game
         return _lettersToGuess == 0;
     }
 }
-
