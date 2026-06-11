@@ -25,7 +25,7 @@ My solution (CRC class-responsibilities-collaborators):
 
 - The first class BOARD handles the logic to move a tile
 
-|BOARD |
+|BOARD ||
 |---|---|
 |knows the state of board		|   |
 |display the numbers on board   |   |
@@ -35,7 +35,7 @@ My solution (CRC class-responsibilities-collaborators):
 
 - The second class PLAYER allows the user to play
 
-|PLAYER |
+|PLAYER ||
 |---|---|
 |get commands to move from user		| Board  |
 |track the move count				|   |
@@ -43,21 +43,21 @@ My solution (CRC class-responsibilities-collaborators):
 
 - The third class GENERATOR initializes the board
 
-|GENERATOR |
+|GENERATOR ||
 |---|---|
 |initialize the board   | Board   |
 |   |   |
 
 - The fourth class COORDINATE manages the point X and Y on the grid
 
-|COORDINATE |
+|COORDINATE ||
 |---|---|
 |knows the (x, y) coordinates of a tile   |    |
 |   |   |
 
 - The last class GAME orchestrates the Game 
 
-|GAME |
+|GAME ||
 |---|---|
 |manange the game flow	| Player  |
 |					| Board  |
