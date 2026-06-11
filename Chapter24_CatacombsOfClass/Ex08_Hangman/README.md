@@ -7,10 +7,10 @@ revealing the word. The player can only get so many letters wrong (a letter not 
 losing the game. An example run of this game could look like this:
 
 ```
-Word: _ _ _ _ _ _ _ _ _ | Remaining: 5 | Incorrect:		| Guess: e
-Word: _ _ _ _ _ _ _ _ E | Remaining: 5 | Incorrect:		| Guess: i
-Word: I _ _ _ _ _ _ _ E | Remaining: 5 | Incorrect:		| Guess: u
-Word: I _ _ U _ _ _ _ E | Remaining: 5 | Incorrect:		| Guess: o
+Word: _ _ _ _ _ _ _ _ _ | Remaining: 5 | Incorrect:		  | Guess: e
+Word: _ _ _ _ _ _ _ _ E | Remaining: 5 | Incorrect:		  | Guess: i
+Word: I _ _ _ _ _ _ _ E | Remaining: 5 | Incorrect:		  | Guess: u
+Word: I _ _ U _ _ _ _ E | Remaining: 5 | Incorrect:		  | Guess: o
 Word: I _ _ U _ _ _ _ E | Remaining: 4 | Incorrect: O		| Guess: a
 Word: I _ _ U _ A _ _ E | Remaining: 4 | Incorrect: O		| Guess: t
 Word: I _ _ U T A _ _ E | Remaining: 4 | Incorrect: O		| Guess: s
