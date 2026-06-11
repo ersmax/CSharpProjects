@@ -40,7 +40,7 @@ My solution (CRC class-responsibilities-collaborators):
 
 - The first class GENERATOR handles the generation of word
 
-|GENERATOR |
+|GENERATOR ||
 |---|---|
 |knows the list of words		|   |
 |pick a word from the list	    |   |
@@ -48,7 +48,7 @@ My solution (CRC class-responsibilities-collaborators):
 
 - The second class PLAYER allows the user to play
 
-|PLAYER |
+|PLAYER ||
 |---|---|
 |pick a guessing letter		| Game  |
 |display the state of game	|   |
@@ -56,7 +56,7 @@ My solution (CRC class-responsibilities-collaborators):
 
 - The third class GAME handles the round 
 
-|GAME |
+|GAME ||
 |---|---|
 |knows the word to guess			| Player   |
 |knows the remaining guesses		|   |
@@ -69,7 +69,7 @@ My solution (CRC class-responsibilities-collaborators):
 
 - The fourth class PROGRAM orchestrates the game
 
-|PROGRAM |
+|PROGRAM ||
 |---|---|
 |Starts a game with a player and word	| Player	|
 |										| Game		|
