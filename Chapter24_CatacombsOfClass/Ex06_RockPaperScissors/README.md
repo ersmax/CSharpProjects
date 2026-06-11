@@ -20,7 +20,7 @@ My solution (CRC class-responsibilities-collaborators):
 
 - The first class PLAYER manages the single users
 
-|PLAYER |
+|PLAYER | |
 |---|---|
 |knows the enum type   |   |
 |get a choice from user   |   |
@@ -28,7 +28,7 @@ My solution (CRC class-responsibilities-collaborators):
 
 - The second class ROUND manages the logic of each game round
 
-|ROUND |
+|ROUND | |
 |---|---|
 |knows each player move   | Player  |
 |determines the winner    |   |
@@ -37,14 +37,14 @@ My solution (CRC class-responsibilities-collaborators):
 
 - The third class STATISTICS keeps track of who won and draws
 
-|STATISTICS |
+|STATISTICS | |
 |---|---|
 |knows each round outcomes   |   |
 |   |   |
 
 - The last class GAME orchestrates the Game rounds and update stats
 
-|GAME |
+|GAME | |
 |---|---|
 |knows each player | Player  |
 |run the rounds    | Round  |
