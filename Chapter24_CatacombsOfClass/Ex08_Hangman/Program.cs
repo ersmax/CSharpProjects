@@ -10,12 +10,11 @@ public class Player
     {
         Console.ForegroundColor = ConsoleColor.Green;
         string letter;
-        do
-        {
-            letter = Console.ReadLine() ?? "not valid";
-        } while (letter.Length != 1);
-
-        return Convert.ToChar(letter);
+        letter = Console.ReadLine() ?? "not valid";
+        Console.ResetColor();
+        if (letter.Length != 1)
+            return '-';
+        return char.ToUpper(Convert.ToChar(letter));
     }
 
     public void DisplayState(Game aGame)
@@ -24,19 +23,21 @@ public class Player
         {
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("You lost, try again.");
+            Console.ResetColor();
             return;
         }
-        if (aGame.Win())
-        {
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("You won, congrats!");
-            return;
-        }
-        Console.ResetColor();
-
+        
         Console.Write("Word:");
         foreach (char character in aGame.HiddenWord)
             Console.Write($" {char.ToUpper(character)}");
+
+        if (aGame.Win())
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("\nYou won, congrats!");
+            Console.ResetColor();
+            return;
+        }
 
         Console.Write($" | Remaining: {aGame.RemainingGuesses}");
 
@@ -44,10 +45,11 @@ public class Player
         string display = "";
         foreach (char character in aGame.IncorrectChars)
             display += char.ToUpper(character); 
-        Console.Write($"{display, 15}");
+        Console.Write($"{display, -8} | ");
 
         Console.ForegroundColor = ConsoleColor.Green;
-        Console.Write(" | Guess: ");
+        Console.Write("Guess: ");
+        Console.ResetColor();
     }
 }
 
@@ -59,7 +61,7 @@ public class Game
     {
         internal string Word { get; }
 
-        private string[] _list = new string[] { "elephant", "piggy", "teddy", "giraffe", "hippocampus" };
+        private string[] _list = new string[] { "ELEPHANT", "PIGGY", "TEDDY", "GIRAFFE", "HIPPOCAMPUS" };
 
         public Generator()
         {
@@ -88,13 +90,14 @@ public class Game
             HiddenWord[idx] = '_';
         
         _lettersToGuess = _word.Length;
-        IncorrectChars = new char[] {};
-        CorrectChars = new char[] {};
+        IncorrectChars = Array.Empty<char>();
+        CorrectChars = Array.Empty<char>();
         ThePlayer = aPlayer;
     }
 
     public void RunGame()
     {
+        Console.WriteLine("Enter a letter to guess");
         ThePlayer.DisplayState(this);
         while (!Win() && RemainingGuesses > 0)
         {
@@ -102,10 +105,15 @@ public class Game
             CheckLetter(theLetter);
             ThePlayer.DisplayState(this);
         }
+        if (RemainingGuesses == 0)
+            Console.WriteLine($"The correct word was: {_word}");
+
     }
 
     private void CheckLetter(char inputLetter)
     {
+        inputLetter = char.ToUpper(inputLetter);
+        
         if (RemainingGuesses == 0) return;
         
         if (!char.IsLetter(inputLetter)) return;
@@ -127,13 +135,17 @@ public class Game
 
         if (validGuess)
         {
-            if (CorrectChars.Length == 0) CorrectChars[0] = inputLetter;
-            else CorrectChars[^1] = inputLetter;
+            char[] temp = CorrectChars;
+            Array.Resize(ref temp, temp.Length + 1);
+            temp[^1] = inputLetter;
+            CorrectChars = temp;
         }
         else
         {
-            if (IncorrectChars.Length == 0) IncorrectChars[0] = inputLetter;
-            else IncorrectChars[^1] = inputLetter;
+            char[] temp = IncorrectChars;
+            Array.Resize(ref temp, temp.Length + 1);
+            temp[^1] = char.ToUpper(inputLetter);
+            IncorrectChars = temp;
             RemainingGuesses--;
         }
     }
@@ -142,23 +154,5 @@ public class Game
     {
         return _lettersToGuess == 0;
     }
-
-    //public void ShowHiddenWord()
-    //{
-    //    foreach (char character in _word)
-    //    {
-    //        bool seen = false;
-    //        foreach (char correctChar in CorrectChars)
-    //            if (character == correctChar)
-    //            {
-    //                seen = true;
-    //                break;
-    //            }
-    //        if (seen)
-    //            Console.WriteLine($"{character, 1}");
-    //        else
-    //            Console.Write($"{"_",1}");
-    //    }
-    //}
 }
 
