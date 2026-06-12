@@ -41,41 +41,45 @@ What square do you want to play in?
 ---
 My solution (CRC class-responsibilities-collaborators):
 
-- The first class GENERATOR handles the generation of word
-
-|GENERATOR ||
-|---|---|
-|knows the list of words		|   |
-|pick a word from the list	    |   |
-|   |   |
-
-- The second class PLAYER allows the user to play
-
-|PLAYER ||
-|---|---|
-|pick a guessing letter		| Game  |
-|display the state of game	|   |
-|   |   |
-
-- The third class GAME handles the round 
-
-|GAME ||
-|---|---|
-|knows the word to guess			| Player   |
-|knows the remaining guesses		|   |
-|knows the incorrect/correct letter	|	|
-|runs the game:						|   |
-|- ask the player for letter			|	|
-|- update state with correct letter	|	|
-|- check for win/lose					|	|
-|									|	|
-
-- The fourth class PROGRAM orchestrates the game
+- The first class PROGRAM handles the setup of the game and runs it
 
 |PROGRAM ||
 |---|---|
-|Starts a game with a player and word	| Player	|
-|										| Game		|
-|										| Dictionary|
-|										|			|
+|Set up and start the game		|   |
+|   |   |
+
+- The second class GAME allows to play next rounds
+
+|GAME ||
+|---|---|
+|Display the board		| Board  |
+|Get move from player	| Player  |
+|Decide if it is a win/lose   |   |
+|   |   |
+
+- The third class PLAYER handles the choices of player
+
+|Player ||
+|---|---|
+|Ask for a square (1..9) 			| Board  |
+|Enure choice is good				|   |
+|Ask for a choice (X or O)			|	|
+|Display state of board				|   |
+|									|	|
+
+- The fourth class BOARD RENDER handles the display of the Board
+
+|BOARD RENDER ||
+|---|---|
+|Display current state of game	| Board	|
+|								| Console		|
+|								|			|
+
+- The fifth class BOARD validates the placement in the grid
+
+|BOARD ||
+|---|---|
+|Knows the state (X, O, Blank) in grid	| Board	|
+|Allows placement of X or O				| |
+|										| |
 
