@@ -41,6 +41,8 @@ What square do you want to play in?
 ---
 My solution (CRC class-responsibilities-collaborators):
 
+![TicTacToe](./tictactoe.jpg)
+
 - The first class PROGRAM handles the setup of the game and runs it
 
 |PROGRAM ||
