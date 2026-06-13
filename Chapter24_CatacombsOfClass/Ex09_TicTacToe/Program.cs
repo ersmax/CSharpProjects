@@ -8,16 +8,12 @@ newGame.RunGame();
 /// </summary>
 public class Game
 {
-    private int[] _positionsX;
-    private int[] _positionsY;
-    private Board _theBoard;
-    private RenderedBoard _theRenderedBoard;
+    private readonly Board _theBoard;
+    private readonly RenderedBoard _theRenderedBoard;
     private Player _currentPlayer;
 
     public Game()
     {
-        _positionsX = Array.Empty<int>();
-        _positionsY = Array.Empty<int>();
         _theBoard = new Board();
         _theRenderedBoard = new RenderedBoard();
     }
@@ -40,10 +36,8 @@ public class Game
             {
                 Console.Clear();
                 Console.Write("It is ");
-                if (_currentPlayer.Name == Sign.X)
-                    Console.ForegroundColor = ConsoleColor.DarkMagenta;
-                else if (_currentPlayer.Name == Sign.O)
-                    Console.ForegroundColor = ConsoleColor.Blue;
+                if (_currentPlayer.Name == Sign.X)      Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                else if (_currentPlayer.Name == Sign.O) Console.ForegroundColor = ConsoleColor.Blue;
                 Console.Write($"{_currentPlayer.Name}");
                 Console.ResetColor();
                 Console.WriteLine("'s turn.");
@@ -63,10 +57,8 @@ public class Game
 
         if (Win(_currentPlayer.Positions))
         {
-            if (_currentPlayer.Name == Sign.X)
-                Console.ForegroundColor = ConsoleColor.DarkMagenta;
-            else if (_currentPlayer.Name == Sign.O)
-                Console.ForegroundColor = ConsoleColor.Blue;
+            if (_currentPlayer.Name == Sign.X)      Console.ForegroundColor = ConsoleColor.DarkMagenta;
+            else if (_currentPlayer.Name == Sign.O) Console.ForegroundColor = ConsoleColor.Blue;
             
             Console.Write($"{_currentPlayer.Name}");
             Console.ResetColor();
@@ -272,8 +264,7 @@ public class Board
     //   a set of coordinates [e.g. (0,0), (0, 1), (0, 2)]
     public (int, int) ParsePosition(int position)
     {
-        (int, int) coordinates;
-        coordinates = position switch
+        (int, int) coordinates = position switch
         {
             1 => (0, 0),
             2 => (0, 1),
