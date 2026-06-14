@@ -95,5 +95,8 @@
     <Project Path="Chapter24_CatacombsOfClass/Ex09_TicTacToe/Ex09_TicTacToe.csproj" Id="53812b99-292f-4db4-a85e-b3f409c076e8" />
     <Project Path="Chapter24_CatacombsOfClass/Solution09_TicTacToe/Solution09_TicTacToe.csproj" Id="149b3d9c-88f9-49a9-b0fd-b52503b0f9a4" />
   </Folder>
+  <Folder Name="/Chapter25_Inheritance/">
+    <Project Path="Chapter25_Inheritance/Demo01_Asteroids/Demo01_Asteroids.csproj" Id="9b13bc4b-7dce-4eee-98b4-d3580d491a50" />
+  </Folder>
   <Project Path="Playground/Playground.csproj" Id="860be32e-94f5-480e-850b-f8bf5486fe11" />
 </Solution>

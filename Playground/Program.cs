@@ -127,27 +127,39 @@ var anonymous = new {Name = "Steve", Age = 50};
 Console.WriteLine($"{anonymous.Name} is {anonymous.Age}");
 
 // Testing null values
-string? name = Console.ReadLine();
-if (name != null)                   // crash with ctrl + Z otherwise
-    Console.WriteLine(name.Length);
+//string? name = Console.ReadLine();
+//if (name != null)                   // crash with ctrl + Z otherwise
+//    Console.WriteLine(name.Length);
 
 // Null coalescing operator ??
-{
-    name ??= "not found";
-    Console.WriteLine(name.Length);
-}
-{
-    string anotherName = Console.ReadLine() ?? "no name";
-    Console.WriteLine(anotherName.Length);
-}
+//{
+//    name ??= "not found";
+//    Console.WriteLine(name.Length);
+//}
+//{
+//    string anotherName = Console.ReadLine() ?? "no name";
+//    Console.WriteLine(anotherName.Length);
+//}
 
 // Null-forgiving operator !
-{
-    string message = MightReturnNullIfNegative(+10)!;
-    Console.WriteLine(message.Length);
+//{
+//    string message = MightReturnNullIfNegative(+10)!;
+//    Console.WriteLine(message.Length);
     
-    string? MightReturnNullIfNegative(int number)
-    {
-        return (number > 0) ? "hello" : null;
-    }
+//    string? MightReturnNullIfNegative(int number)
+//    {
+//        return (number > 0) ? "hello" : null;
+//    }
+//}
+
+// Testing Equals method
+{
+    object thing = new object();
+    Console.WriteLine(thing.ToString());
+
+    object newA = new object();
+    object newB = newA;
+    object c = new object();
+    Console.WriteLine(newA.Equals(newB));   // true, same location on the heap
+    Console.WriteLine(newA.Equals(c));      // false, different objects on the heap
 }
