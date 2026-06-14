@@ -19,12 +19,12 @@ public class Game
     private readonly Board _theBoard;
     private readonly RenderedBoard _theRenderedBoard;
     private Player _currentPlayer;
-    private static Sign[] _winners = Array.Empty<Sign>();
+    private static Sign[] Winners = Array.Empty<Sign>();
 
     //Alternatively
     //static Game()
     //{
-    //    _winners = Array.Empty<Sign>();
+    //    Winners = Array.Empty<Sign>();
     //}
 
     public Game()
@@ -70,17 +70,17 @@ public class Game
             turn++;
         }
 
-        Array.Resize(ref _winners, _winners.Length + 1);
+        Array.Resize(ref Winners, Winners.Length + 1);
         if (Win(_currentPlayer.Positions))
         {
             if (_currentPlayer.Name == Sign.X)
             {
-                _winners[^1] = Sign.X;
+                Winners[^1] = Sign.X;
                 Console.ForegroundColor = ConsoleColor.DarkMagenta;
             }   
             else if (_currentPlayer.Name == Sign.O)
             {
-                _winners[^1] = Sign.O;
+                Winners[^1] = Sign.O;
                 Console.ForegroundColor = ConsoleColor.Blue;
             }
             
@@ -90,7 +90,7 @@ public class Game
         }
         else if (_theBoard.PositionsLeft == 0)
         {
-            _winners[^1] = Sign.Empty;
+            Winners[^1] = Sign.Empty;
             Console.WriteLine("This round is a tie.");
         }
 
@@ -140,11 +140,11 @@ public class Game
 
     public void DisplayWinner()
     {
-        for (int round = 0; round < _winners.Length; round++)
+        for (int round = 0; round < Winners.Length; round++)
         {
             Console.Write($"Round: {round + 1,3}");
-            if (_winners[round] == Sign.Empty)  Console.WriteLine(" Tie");
-            else Console.WriteLine($" Winner: {_winners[round]}");
+            if (Winners[round] == Sign.Empty)  Console.WriteLine(" Tie");
+            else Console.WriteLine($" Winner: {Winners[round]}");
         }
 
         Console.WriteLine();
@@ -158,7 +158,7 @@ public class Game
     private Sign DecideWinner()
     {
         int winsX = 0, winsO = 0;
-        foreach (Sign winner in _winners)
+        foreach (Sign winner in Winners)
             if (winner == Sign.X) winsX++;
             else if (winner == Sign.O) winsO++;
 
