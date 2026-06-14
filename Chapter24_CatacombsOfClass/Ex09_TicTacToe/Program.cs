@@ -70,19 +70,17 @@ public class Game
             turn++;
         }
 
-        Sign[] temp = _winners;
-        Array.Resize(ref temp, temp.Length + 1);
-
+        Array.Resize(ref _winners, _winners.Length + 1);
         if (Win(_currentPlayer.Positions))
         {
             if (_currentPlayer.Name == Sign.X)
             {
-                temp[^1] = Sign.X;
+                _winners[^1] = Sign.X;
                 Console.ForegroundColor = ConsoleColor.DarkMagenta;
             }   
             else if (_currentPlayer.Name == Sign.O)
             {
-                temp[^1] = Sign.O;
+                _winners[^1] = Sign.O;
                 Console.ForegroundColor = ConsoleColor.Blue;
             }
             
@@ -92,11 +90,10 @@ public class Game
         }
         else if (_theBoard.PositionsLeft == 0)
         {
-            temp[^1] = Sign.Empty;
+            _winners[^1] = Sign.Empty;
             Console.WriteLine("This round is a tie.");
         }
 
-        _winners = temp;
         _theRenderedBoard.Display(_theBoard.Grid);
         Console.WriteLine("Press a key to exit");
         Console.ReadKey(true);
