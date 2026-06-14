@@ -11,8 +11,6 @@ while (true)
 }
 newGame.DisplayWinner();
 
-
-
 /// <summary>
 /// This class allows to play next rounds
 /// </summary>
