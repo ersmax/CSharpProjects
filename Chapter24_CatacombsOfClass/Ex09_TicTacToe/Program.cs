@@ -3,7 +3,7 @@
 Game newGame;
 while (true)
 {
-    newGame = new Game();
+    newGame = Game.StartGame();
     newGame.RunGame();
     Console.WriteLine("Continue? (y/n)");
     string input = Console.ReadLine();
@@ -27,9 +27,11 @@ public class Game
     //    Winners = Array.Empty<Sign>();
     //}
 
-    public Game()
+    // Factory method with a side of grid of 3
+    public static Game StartGame() => new Game(3);
+    public Game(int sideGrid)
     {
-        _theBoard = new Board();
+        _theBoard = new Board(sideGrid);
         _theRenderedBoard = new RenderedBoard();
     }
 
@@ -302,9 +304,9 @@ public class Board
     public Sign[,] Grid { get; }
     public int Dimension { get; }
 
-    public Board()
+    public Board(int sideGrid)
     {
-        Dimension = 3;
+        Dimension = sideGrid;
         PositionsLeft = Dimension * Dimension;
         Grid = new Sign[Dimension, Dimension];
         for (int row = 0; row < Grid.GetLength(0); row++)
