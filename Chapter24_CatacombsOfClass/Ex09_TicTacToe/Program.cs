@@ -1,7 +1,17 @@
 ﻿Console.Title = "Tic-Tac-Toe";
 
-Game newGame = new Game();
-newGame.RunGame();
+Game newGame;
+while (true)
+{
+    newGame = new Game();
+    newGame.RunGame();
+    Console.WriteLine("Continue? (y/n)");
+    string input = Console.ReadLine();
+    if (input == "n") break;
+}
+newGame.DisplayWinner();
+
+
 
 /// <summary>
 /// This class allows to play next rounds
@@ -11,6 +21,12 @@ public class Game
     private readonly Board _theBoard;
     private readonly RenderedBoard _theRenderedBoard;
     private Player _currentPlayer;
+    private static Sign[] _winners;
+
+    static Game()
+    {
+        _winners = Array.Empty<Sign>();
+    }
 
     public Game()
     {
@@ -55,18 +71,33 @@ public class Game
             turn++;
         }
 
+        Sign[] temp = _winners;
+        Array.Resize(ref temp, temp.Length + 1);
+
         if (Win(_currentPlayer.Positions))
         {
-            if (_currentPlayer.Name == Sign.X)      Console.ForegroundColor = ConsoleColor.DarkMagenta;
-            else if (_currentPlayer.Name == Sign.O) Console.ForegroundColor = ConsoleColor.Blue;
+            if (_currentPlayer.Name == Sign.X)
+            {
+                temp[^1] = Sign.X;
+                Console.ForegroundColor = ConsoleColor.DarkMagenta;
+            }   
+            else if (_currentPlayer.Name == Sign.O)
+            {
+                temp[^1] = Sign.O;
+                Console.ForegroundColor = ConsoleColor.Blue;
+            }
             
             Console.Write($"{_currentPlayer.Name}");
             Console.ResetColor();
             Console.WriteLine(" won!");
         }
         else if (_theBoard.PositionsLeft == 0)
-            Console.WriteLine("This game is a tie.");
+        {
+            temp[^1] = Sign.Empty;
+            Console.WriteLine("This round is a tie.");
+        }
 
+        _winners = temp;
         _theRenderedBoard.Display(_theBoard.Grid);
         Console.WriteLine("Press a key to exit");
         Console.ReadKey(true);
@@ -109,6 +140,35 @@ public class Game
     {
         return (numbers[0] && numbers[4] && numbers[8] ||
                 numbers[2] && numbers[4] && numbers[6]);
+    }
+
+    public void DisplayWinner()
+    {
+        for (int round = 0; round < _winners.Length; round++)
+        {
+            Console.Write($"Round: {round + 1,3}");
+            if (_winners[round] == Sign.Empty)  Console.WriteLine(" Tie");
+            else Console.WriteLine($" Winner: {_winners[round]}");
+        }
+
+        Console.WriteLine();
+        Sign outcome = DecideWinner();
+        if (outcome == Sign.Empty)
+            Console.WriteLine("The game is a draw");
+        else 
+            Console.WriteLine($"{outcome} won the game");
+    }
+
+    private Sign DecideWinner()
+    {
+        int winsX = 0, winsO = 0;
+        foreach (Sign winner in _winners)
+            if (winner == Sign.X) winsX++;
+            else if (winner == Sign.O) winsO++;
+
+        if (winsX > winsO) return Sign.X;
+        if (winsO > winsX) return Sign.O;
+        return Sign.Empty;
     }
 }
 

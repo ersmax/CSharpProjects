@@ -39,7 +39,16 @@ What square do you want to play in?
   was a requirement (for example, a best-out-of-five series)?
 
 ---
-My solution (CRC class-responsibilities-collaborators):
+- To answer the second question: I would probably create multiple Game instances inside the 
+  Program with a loop, and the call the method Run. 
+- Game class stores a static member variable of type array Sign[] which stores the player who won each round
+  (eg. private static Sign[] _winners)
+- Then, at each round and call of Run() method, I would update the static array with the winner. 
+- When the user wishes to end the game, it ends the loop by choosing "n" after being asked to continue or not (y/n).
+  The game then presents a screen with the winners of each round computed with a private method inside
+  the class Game, that is DecideWinner.
+
+My design solution (CRC class-responsibilities-collaborators):
 
 ![TicTacToe](./tictactoe.jpg)
 
