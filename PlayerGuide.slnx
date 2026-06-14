@@ -93,6 +93,7 @@
     <Project Path="Chapter24_CatacombsOfClass/Ex07_15Puzzle/Ex07_15Puzzle.csproj" Id="9e5f35d4-b9c3-4182-8ac7-0e03f0d9eb16" />
     <Project Path="Chapter24_CatacombsOfClass/Ex08_Hangman/Ex08_Hangman.csproj" Id="22047bf6-131a-4bc3-9a14-2015830fba5c" />
     <Project Path="Chapter24_CatacombsOfClass/Ex09_TicTacToe/Ex09_TicTacToe.csproj" Id="53812b99-292f-4db4-a85e-b3f409c076e8" />
+    <Project Path="Chapter24_CatacombsOfClass/Solution09_TicTacToe/Solution09_TicTacToe.csproj" Id="149b3d9c-88f9-49a9-b0fd-b52503b0f9a4" />
   </Folder>
   <Project Path="Playground/Playground.csproj" Id="860be32e-94f5-480e-850b-f8bf5486fe11" />
 </Solution>

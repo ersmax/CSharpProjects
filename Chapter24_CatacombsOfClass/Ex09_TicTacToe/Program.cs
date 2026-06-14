@@ -130,18 +130,36 @@ public class Player
     // Choose the tile
     public int EnterSquare(int dimension, RenderedBoard renderedRenderedBoard)
     {
-        int input;
+        int input = -1;
         int numberSquares = dimension * dimension;
-        do
-        {
-            Console.WriteLine($"What square do you want to play in? (1-{numberSquares})");
-            renderedRenderedBoard.DisplayChoices(dimension);
-            Console.ForegroundColor = ConsoleColor.DarkGray;
-            Console.Write("> ");
-            input = Convert.ToInt32(Console.ReadLine());
-            Console.ResetColor();
-        } while (input < 1 || input > numberSquares);
+        
+        Console.WriteLine($"What square do you want to play in? (1-{numberSquares})");
+        renderedRenderedBoard.DisplayChoices(dimension);
+        Console.ForegroundColor = ConsoleColor.DarkGray;
+        Console.Write("> ");
 
+        // TODO: press a key instead of relying on reading input
+        ConsoleKey key = Console.ReadKey().Key;
+        input = key switch
+        {
+            ConsoleKey.D1 => 1,
+            ConsoleKey.D2 => 2,
+            ConsoleKey.D3 => 3,
+            ConsoleKey.D4 => 4,
+            ConsoleKey.D5 => 5,
+            ConsoleKey.D6 => 6,
+            ConsoleKey.D7 => 7,
+            ConsoleKey.D8 => 8,
+            ConsoleKey.D9 => 9,
+            _ => -1,
+        };
+        Console.WriteLine();
+        if (input == -1)
+        {
+            Console.ForegroundColor = ConsoleColor.DarkRed;
+            Console.WriteLine("Invalid position key");
+        }
+        Console.ResetColor();
         return input;
     }
 
@@ -244,25 +262,41 @@ public class Board
     // Returns whether the chosen position is okay to move to or busy
     public bool Place(Sign playerSign, int position)
     {
-        int x = ParsePosition(position).Item1;
-        int y = ParsePosition(position).Item2;
+        if (!IsValid(position)) return false;
+        int row = ParsePosition(position).Item1;
+        int column = ParsePosition(position).Item2;
+        Grid[row, column] = playerSign;
+        PositionsLeft--;
+        return true;
+    }
 
-        if (Grid[x, y] == Sign.Empty)
-        {
-            Grid[x, y] = playerSign;
-            PositionsLeft--;
+    // Check whether the position chosen is valid or not
+    private bool IsValid(int position)
+    {
+        int minTile = 1;
+        int maxTile = Dimension * Dimension;
+        if (position < minTile || position > maxTile) return false;
+        return IsEmpty(position);
+    }
+
+    // Check whether the position chosen is empty or not
+    private bool IsEmpty(int position)
+    {
+        int row = ParsePosition(position).Item1;
+        int column = ParsePosition(position).Item2;
+        if (Grid[row, column] == Sign.Empty)
             return true;
-        }
-
+        
         Console.ForegroundColor = ConsoleColor.DarkRed;
         Console.WriteLine("Square already chosen");
         Console.ResetColor();
         return false;
     }
 
+
     // Translate the position (e.g. 1, 2, 3 in first row) into
     //   a set of coordinates [e.g. (0,0), (0, 1), (0, 2)]
-    public (int, int) ParsePosition(int position)
+    private (int, int) ParsePosition(int position)
     {
         (int, int) coordinates = position switch
         {
