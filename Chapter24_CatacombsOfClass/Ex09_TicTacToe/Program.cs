@@ -9,7 +9,7 @@ while (true)
     string input = Console.ReadLine();
     if (input == "n") break;
 }
-newGame.DisplayWinner();
+Game.DisplayWinner();
 
 /// <summary>
 /// This class allows to play next rounds
@@ -138,7 +138,7 @@ public class Game
                 numbers[2] && numbers[4] && numbers[6]);
     }
 
-    public void DisplayWinner()
+    public static void DisplayWinner()
     {
         for (int round = 0; round < Winners.Length; round++)
         {
@@ -146,16 +146,13 @@ public class Game
             if (Winners[round] == Sign.Empty)  Console.WriteLine(" Tie");
             else Console.WriteLine($" Winner: {Winners[round]}");
         }
-
         Console.WriteLine();
         Sign outcome = DecideWinner();
-        if (outcome == Sign.Empty)
-            Console.WriteLine("The game is a draw");
-        else 
-            Console.WriteLine($"{outcome} won the game");
+        if (outcome == Sign.Empty) Console.WriteLine("The game is a draw");
+        else Console.WriteLine($"{outcome} won the game");
     }
 
-    private Sign DecideWinner()
+    private static Sign DecideWinner()
     {
         int winsX = 0, winsO = 0;
         foreach (Sign winner in Winners)
