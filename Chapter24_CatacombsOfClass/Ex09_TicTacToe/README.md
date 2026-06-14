@@ -43,6 +43,8 @@ What square do you want to play in?
   Program with a loop, and the call the method Run. 
 - Game class stores a static member variable of type array Sign[] which stores the player who won each round
   (eg. private static Sign[] _winners)
+- The static array is initialized either upon declaration or by a static constructor.
+  The first choice is taken for better readability.
 - Then, at each round and call of Run() method, I would update the static array with the winner. 
 - When the user wishes to end the game, it ends the loop by choosing "n" after being asked to continue or not (y/n).
   The game then presents a screen with the winners of each round computed with a private method inside

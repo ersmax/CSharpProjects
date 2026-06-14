@@ -19,12 +19,13 @@ public class Game
     private readonly Board _theBoard;
     private readonly RenderedBoard _theRenderedBoard;
     private Player _currentPlayer;
-    private static Sign[] _winners;
+    private static Sign[] _winners = Array.Empty<Sign>();
 
-    static Game()
-    {
-        _winners = Array.Empty<Sign>();
-    }
+    //Alternatively
+    //static Game()
+    //{
+    //    _winners = Array.Empty<Sign>();
+    //}
 
     public Game()
     {
