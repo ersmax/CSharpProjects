@@ -5,11 +5,11 @@ string answer = "y";
 while (answer != "n")
 {
     Console.Clear();
-    Console.WriteLine("Backpack capacity:");
-    Console.WriteLine($"Items: {backpack.ItemsCount} / {backpack.MaxItems}");
-    Console.WriteLine($"Weight: {backpack.WeightCount:F} / {backpack.MaxWeight}");
-    Console.WriteLine($"Volume: {backpack.VolumeCount:F} / {backpack.MaxVolume}");
-    Item option = ChooseItem();
+    string text = "Backpack capacity:\n";
+    text += $"Items: {backpack.CurrentItems} / {backpack.MaxItems}\n";
+    text += $"Weight: {backpack.CurrentWeight:F} / {backpack.MaxWeight}\n";
+    text += $"Volume: {backpack.CurrentVolume:F} / {backpack.MaxVolume}\n";
+    Item option = ChooseItem(text);
     InventoryItem item = option switch
     {
         Item.Arrow => Arrow.CreateArrow(),
@@ -19,13 +19,18 @@ while (answer != "n")
         Item.Sword => Sword.CreateSword(),
         Item.Water => Water.CreateWater()
     };
-    backpack.Add(item);
+    if (!backpack.Add(item))
+    {
+        Console.ForegroundColor = ConsoleColor.DarkRed;
+        Console.WriteLine("Max capacity reached");
+        Console.ResetColor();
+    }
+    backpack.ShowBackpack();
     Console.WriteLine("Continue? (y/n)");
     answer = Console.ReadLine()?.ToLower() ?? "y";
 }
-Pack.ShowBackpack();
 
-Item ChooseItem()
+Item ChooseItem(string text)
 {
     string[] options = Enum.GetNames<Item>();
     string display = "";
@@ -35,9 +40,12 @@ Item ChooseItem()
     int option = -1;
     while (option < 0 || option >= options.Length)
     {
+        Console.Clear();
+        Console.WriteLine(text);
         Console.WriteLine("Enter a number of the item of your choice.");
         Console.WriteLine($"{display}");
         Console.Write("> ");
+
         option = Convert.ToInt32(Console.ReadLine());
         option--;
     }
@@ -47,14 +55,14 @@ Item ChooseItem()
 
 public class Pack
 {
-    private static InventoryItem[] Backpack = Array.Empty<InventoryItem>();
+    private InventoryItem[] _backpack = Array.Empty<InventoryItem>();
     
     public int MaxItems { get; }
     public float MaxWeight { get; }
     public float MaxVolume { get; }
-    public int ItemsCount { get; private set; }
-    public float WeightCount { get; private set; }
-    public float VolumeCount { get; private set; }
+    public int CurrentItems { get; private set; }
+    public float CurrentWeight { get; private set; }
+    public float CurrentVolume { get; private set; }
 
     public Pack(int items, float weight, float volume)
     {
@@ -63,34 +71,29 @@ public class Pack
         MaxVolume = volume;
     }
 
-    public static void ShowBackpack()
+    public void ShowBackpack()
     {
-        for (int idx = 0; idx < Backpack.Length; idx++)
-            Console.WriteLine($"Item {idx + 1, 2}: {Backpack[idx].ToString()}");
+        for (int idx = 0; idx < _backpack.Length; idx++)
+            Console.WriteLine($"Item {idx + 1, 2}: {_backpack[idx]}");
     }
 
     public bool Add(InventoryItem item)
     {
-        if (!CanBeAdded(item))
-        {
-            Console.ForegroundColor = ConsoleColor.DarkRed;
-            Console.WriteLine("Cannot add this element");
-            Console.ResetColor();
-            return false;
-        }
-        Array.Resize(ref Backpack, Backpack.Length + 1);
-        Backpack[^1] = item;
-        ItemsCount++;
-        WeightCount += item.Weight;
-        VolumeCount += item.Volume;
+        if (!CanBeAdded(item)) return false;
+        
+        Array.Resize(ref _backpack, _backpack.Length + 1);
+        _backpack[^1] = item;
+        CurrentItems++;
+        CurrentWeight += item.Weight;
+        CurrentVolume += item.Volume;
         return true;
     }
 
     private bool CanBeAdded(InventoryItem item)
     {
-        if (MaxItems < ItemsCount + 1) return false;
-        if (MaxWeight < WeightCount + item.Weight) return false;
-        if (MaxVolume < VolumeCount + item.Volume) return false;
+        if (MaxItems < CurrentItems + 1) return false;
+        if (MaxWeight < CurrentWeight + item.Weight) return false;
+        if (MaxVolume < CurrentVolume + item.Volume) return false;
         return true;
     }
 }
