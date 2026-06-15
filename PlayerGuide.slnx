@@ -97,6 +97,7 @@
   </Folder>
   <Folder Name="/Chapter25_Inheritance/">
     <Project Path="Chapter25_Inheritance/Demo01_Asteroids/Demo01_Asteroids.csproj" Id="9b13bc4b-7dce-4eee-98b4-d3580d491a50" />
+    <Project Path="Chapter25_Inheritance/Ex01_PackingInventory/Ex01_PackingInventory.csproj" Id="ddba585f-a8c8-494f-b96c-bd3d4b0faf3d" />
   </Folder>
   <Project Path="Playground/Playground.csproj" Id="860be32e-94f5-480e-850b-f8bf5486fe11" />
 </Solution>
