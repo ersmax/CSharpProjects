@@ -99,5 +99,9 @@
     <Project Path="Chapter25_Inheritance/Demo01_Asteroids/Demo01_Asteroids.csproj" Id="9b13bc4b-7dce-4eee-98b4-d3580d491a50" />
     <Project Path="Chapter25_Inheritance/Ex01_PackingInventory/Ex01_PackingInventory.csproj" Id="ddba585f-a8c8-494f-b96c-bd3d4b0faf3d" />
   </Folder>
+  <Folder Name="/Chapter26_Polymorphism/">
+    <Project Path="Chapter26_Polymorrphism/Demo01_Chess/Demo01_Chess.csproj" Id="b8e6a35a-7a85-478e-96fe-e4dae1aaae90" />
+    <Project Path="Chapter26_Polymorrphism/Ex01_LabelingInventory/Ex01_LabelingInventory.csproj" Id="b267986b-d02d-46f7-82cd-ba3909ac66de" />
+  </Folder>
   <Project Path="Playground/Playground.csproj" Id="860be32e-94f5-480e-850b-f8bf5486fe11" />
 </Solution>
