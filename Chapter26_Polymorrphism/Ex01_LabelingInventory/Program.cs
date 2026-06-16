@@ -1,4 +1,4 @@
-﻿Console.Title = "Packing Inventory";
+﻿Console.Title = "Labeling Inventory";
 
 Pack backpack = new Pack(10, 20, 30);
 string answer = "y";

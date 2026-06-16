@@ -102,6 +102,7 @@
   <Folder Name="/Chapter26_Polymorphism/">
     <Project Path="Chapter26_Polymorrphism/Demo01_Chess/Demo01_Chess.csproj" Id="b8e6a35a-7a85-478e-96fe-e4dae1aaae90" />
     <Project Path="Chapter26_Polymorrphism/Ex01_LabelingInventory/Ex01_LabelingInventory.csproj" Id="b267986b-d02d-46f7-82cd-ba3909ac66de" />
+    <Project Path="Chapter26_Polymorrphism/Ex02_TheOldRobot/Ex02_TheOldRobot.csproj" Id="c9f89ea4-9f43-444f-9e45-ea382df1745f" />
   </Folder>
   <Project Path="Playground/Playground.csproj" Id="860be32e-94f5-480e-850b-f8bf5486fe11" />
 </Solution>
