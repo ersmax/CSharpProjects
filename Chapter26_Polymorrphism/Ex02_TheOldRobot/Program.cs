@@ -1,6 +1,52 @@
 ﻿Console.Title = "The Old Robot";
 
-// TODO : orchestrate main
+Robot aRobot = new Robot();
+while (true)
+{
+    Command input = ChooseCommand();
+    RobotCommand command = input switch
+    {
+        Command.On => new OnCommand(),
+        Command.Off => new OffCommand(),
+        Command.North => new NorthCommand(),
+        Command.South => new SouthCommand(),
+        Command.East => new EastCommand(),
+        Command.West => new WestCommand(),
+    };
+    aRobot.AddCommand(command);
+    Console.WriteLine("Enter new command? (y/n)");
+    string? quit = Console.ReadLine()?.ToLower();
+    if (quit == "n") break;
+    Console.Clear();
+}
+Console.Clear();
+aRobot.Run();
+
+
+Command ChooseCommand()
+{
+    string[] options = Enum.GetNames<Command>();
+    string display = "";
+    foreach (string option in options)
+        display += $" \"{option}\"";
+    
+    string input = "not valid";
+    bool validInput = false;
+    while (!validInput)
+    {
+        Console.WriteLine($"Write an option: {display}");
+        Console.Write("> ");
+        input = Console.ReadLine() ?? "not valid";
+        foreach (string option in options)
+            if (option.ToLower() == input.ToLower())
+            {
+                validInput = true;
+                break;
+            }
+        Console.Clear();
+    }
+    return Enum.Parse<Command>(input, true);
+}
 
 public class Robot 
 {
@@ -22,7 +68,7 @@ public class Robot
         foreach (RobotCommand? command in Commands)
         {
             command?.Run(this);
-            Console.WriteLine($"[Position: {X} {Y}. Is powered: {IsPowered}]");
+            Console.WriteLine($"Position: (x:{X}, y:{Y}). Is powered: {IsPowered}");
         }
     }
 }
@@ -61,3 +107,5 @@ public class EastCommand : RobotCommand
 {
     public override void Run(Robot aRobot) { if (aRobot.IsPowered) aRobot.X++; }
 }
+
+public enum Command {On, Off, North, South, West, East}
